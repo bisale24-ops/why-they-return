@@ -180,7 +180,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space
 
 <section id="report">
   <div class="wrap">
-    <div class="label">Product reports · 40 real dresses</div>
+    <div class="label">Product reports · 40 real items, never used for tuning</div>
     <h2>Pick a product. See what its renters were telling you.</h2>
     <p class="sub">Each report is Gemma reading 60 real reviews of one Rent the Runway item. The grey bar is what renters themselves reported across <em>all</em> reviews of that item, a number Gemma never saw.</p>
     <div class="report">
@@ -197,7 +197,7 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space
   <div class="wrap">
     <div class="label">Proof, measured once on held-out data</div>
     <h2>Checked against what renters said themselves.</h2>
-    <p class="sub">Rent the Runway asks every renter whether the item fit, ran small or ran large. We hid that label, gave Gemma only the review text, and compared. The prompt was tuned on a separate dev set; the numbers below are from a single run on data it never touched.</p>
+    <p class="sub">Rent the Runway asks every renter whether the item fit, ran small or ran large. We hid that label, gave Gemma only the review text, and compared. The prompt was tuned on separate dev sets. The 40 products in the report above were drawn after the final prompt was written and run once; the full history, including what went wrong, is in the README.</p>
     <div class="proof" id="proofstats"></div>
     <div class="card" style="margin-top:16px">
       <div class="label">Review-level, balanced sample</div>
@@ -281,7 +281,7 @@ function show(i) {
         <h3>${esc(rep.headline || "Fit report")}</h3></div>${note}</div>
       <div class="meter">${meter("Runs small", p.pred_small, p.true_small, p.kw_small)}</div>
       <div class="meter">${meter("Runs large", p.pred_large, p.true_large, p.kw_large)}</div>
-      <div class="legend"><span>Gemma on AMD</span><span class="t">Renters' own label, all reviews</span><span class="k">Keyword rule</span></div>
+      <div class="legend"><span>Share of read reviews Gemma files as small / large</span><span class="t">Renters' own label, all reviews</span><span class="k">Keyword rule</span></div>
     </div>
     <div class="split">
       <div class="card fix"><div class="label">Add to the listing</div>

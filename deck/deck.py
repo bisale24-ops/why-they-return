@@ -72,12 +72,13 @@ SLIDES = [
         <div class="sm">from {top['sampled']} of {top['n_reviews']} reviews; the renter label covers all of them</div></div>
     </div>{FOOT}</div>""",
 
-    f"""<div class="s"><div class="k">Proof · held-out data, one run</div><h2>Checked against what renters said themselves.</h2>
+    f"""<div class="s"><div class="k">Proof · renter labels hidden from the model</div><h2>Checked against what renters said themselves.</h2>
     <table><tr><th>Method</th><th class="n">Macro-F1</th><th class="n">Accuracy</th><th class="n">Ranks “runs small”</th><th class="n">Ranks “runs large”</th></tr>
       <tr class="w"><td>Gemma 3 12B on AMD</td><td class="n">{f(m['gemma']['macro_f1'])}</td><td class="n">{f(m['gemma']['accuracy'])}</td><td class="n">{f(rk['small']['gemma'])}</td><td class="n">{f(rk['large']['gemma'])}</td></tr>
       <tr><td>Keyword rules</td><td class="n">{f(m['keyword']['macro_f1'])}</td><td class="n">{f(m['keyword']['accuracy'])}</td><td class="n">{f(rk['small']['keyword'])}</td><td class="n">{f(rk['large']['keyword'])}</td></tr></table>
-    <p class="l" style="font-size:26px">Rent the Runway: {m['n']} reviews balanced across fit / small / large; 40 products, Spearman vs each
-    product's true share over all its reviews. Prompt tuned on a separate dev set.</p>{FOOT}</div>""",
+    <p class="l" style="font-size:26px">Rent the Runway: {m['n']} reviews balanced across fit / small / large. Products: set B, 40 items drawn after the
+    prompt was fixed and run once; Spearman vs each item's true share over all its reviews. Rules can rank; only the
+    model says why, quotes the customer and writes the fix.</p>{FOOT}</div>""",
 
     f"""<div class="s dark"><div class="k">AMD</div><h2>The whole pipeline runs on <span class="hi">one AMD GPU</span>.</h2>
     <div class="grid c3">

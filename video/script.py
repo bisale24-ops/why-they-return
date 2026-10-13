@@ -45,10 +45,11 @@ SCENES = [
 
     ("card:proof",
      f"Does it work? Rent the Runway asks every renter whether the item fit, ran small or ran large. We hid that "
-     f"label and compared. On {m['n']} held-out reviews Gemma scores a macro F1 of {two(g['macro_f1'])}, against "
-     f"{two(k['macro_f1'])} for the keyword rules a seller would write. On forty products it was never tuned on, it "
-     f"ranks the ones that run small with a Spearman of {two(rk['small']['gemma'])}, against "
-     f"{two(rk['small']['keyword'])}."),
+     f"label and compared. On {m['n']} reviews Gemma scores a macro F1 of {two(g['macro_f1'])}, against "
+     f"{two(k['macro_f1'])} for the keyword rules a seller would write first. On forty products the prompt never saw, "
+     f"it ranks the items that run large far better, {two(rk['large']['gemma'])} against {two(rk['large']['keyword'])}; "
+     f"on items that run small the rules are level with it. What rules cannot do is say why, quote the customer, "
+     f"and write the fix."),
 
     ("card:amd",
      f"Everything runs on one AMD Radeon PRO W7900D with ROCm and PyTorch: {run['reviews']:,} reviews read in "
@@ -66,7 +67,7 @@ CARDS = {
     <table><tr><td class=big><b>300+</b> reviews per product</td><td class=big>the reasons are already written down</td></tr></table>""",
 
     "proof": f"""<h1>Checked against what renters said themselves</h1>
-    <p class=sub>Rent the Runway fit labels, hidden from the model. Prompt tuned on separate dev sets.</p>
+    <p class=sub>Rent the Runway fit labels, hidden from the model. Products: set B, drawn after the prompt was fixed, run once.</p>
     <table>
       <tr><th>held-out test</th><th>Gemma 3 12B on AMD</th><th>keyword rules</th></tr>
       <tr><td>{m['n']} reviews · macro-F1</td><td class=ok>{two(g['macro_f1'])}</td><td>{two(k['macro_f1'])}</td></tr>

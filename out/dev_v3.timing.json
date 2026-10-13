@@ -1,0 +1,12 @@
+{
+  "model": "unsloth/gemma-3-12b-it",
+  "gpu": "AMD Radeon Pro W7900D",
+  "hip": "7.15.26333",
+  "torch": "2.13.0+rocm10.0.0",
+  "host": "j-pcbjhigbxcb7cn6hbz2vi5bkdn",
+  "reviews": 150,
+  "seconds": 132.28411412239075,
+  "new_tokens": 9079,
+  "reviews_per_s": 1.133923003492455,
+  "batch": 16
+}
