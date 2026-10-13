@@ -8,7 +8,7 @@ already written down: customers say "runs small, size up" or "the zipper broke" 
 per product. Why They Return does, with Gemma 3 12B running on an AMD Radeon PRO GPU, and hands the seller three things
 per product: how the item really fits, what else goes wrong, and the exact sentence and photo to add to the listing.
 
-Demo: **https://bisale24-ops.github.io/why-they-return/** · Video: **{VIDEO_URL}** · Slides: `deck/why-they-return-deck.pdf`
+Demo: **https://bisale24-ops.github.io/why-they-return/** · Video: **https://youtu.be/vhAo2jtH1wk** · Slides: `deck/why-they-return-deck.pdf`
 
 ## Measured, not claimed
 
