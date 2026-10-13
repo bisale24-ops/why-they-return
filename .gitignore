@@ -1,0 +1,4 @@
+data/rtr.json.gz
+__pycache__/
+.venv/
+*.pyc
