@@ -55,7 +55,7 @@ items that run large. On ranking items that run small, plain rules are as good; 
 the quote and the fix it writes, which rules cannot produce.
 
 Throughput: about 1.1–1.3 reviews/s on one AMD Radeon PRO W7900D (48 GB, bf16, ROCm 7.15, PyTorch 2.13, batched HF
-`generate`, no serving engine); 8,000+ reviews read on AMD across the run files in `out/`. A vLLM server on AMD Instinct
+`generate`, no serving engine); 7,882 reviews read on AMD in the run files in `out/`. A vLLM server on AMD Instinct
 is the obvious next step for throughput.
 
 ## How it works
