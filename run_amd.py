@@ -44,7 +44,7 @@ gpu = torch.cuda.get_device_name(0) if device == "cuda" else "cpu"
 print("device:", gpu, "| torch", torch.__version__, "| hip", getattr(torch.version, "hip", None))
 
 tok = AutoTokenizer.from_pretrained(args.model, padding_side="left")
-model = AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.bfloat16, device_map=device)
+model = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.bfloat16, device_map=device)
 model.eval()
 
 t0 = time.time()
