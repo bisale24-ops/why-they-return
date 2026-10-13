@@ -12,6 +12,8 @@ from wtr.score import per_class, spearman
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE / "out"
+# Final prompt (v3), run once on product set B, which no prompt was tuned on; v2 numbers stay in the README.
+REVIEWS_RUN, PRODUCTS_RUN, REPORTS, PRODUCT_SET = "reviews_v3.jsonl", "pb_v3.jsonl", "pb_reports.jsonl", "products_b.jsonl"
 
 
 def load(name):
@@ -19,7 +21,7 @@ def load(name):
 
 
 reviews_text = {r["id"]: r["text"] for r in map(json.loads, open(HERE / "data" / "reviews.jsonl"))}
-products = {p["item"]: p for p in map(json.loads, open(HERE / "data" / "products.jsonl"))}
+products = {p["item"]: p for p in map(json.loads, open(HERE / "data" / PRODUCT_SET))}
 product_text = {r["id"]: r["text"] for p in products.values() for r in p["reviews"]}
 
 
@@ -30,10 +32,10 @@ def metrics(run, texts):
             "n": len(run), "unparsed": sum(not r["parsed"] for r in run)}
 
 
-rev = load("reviews_12b.jsonl")
-prod = load("products_12b.jsonl")
-reports = {r["item"]: r for r in load("product_reports.jsonl")}
-timing = [json.load(open(OUT / n)) for n in ("reviews_12b.timing.json", "products_12b.timing.json")]
+rev = load(REVIEWS_RUN)
+prod = load(PRODUCTS_RUN)
+reports = {r["item"]: r for r in load(REPORTS)}
+timing = [json.load(open(OUT / n.replace(".jsonl", ".timing.json"))) for n in (REVIEWS_RUN, PRODUCTS_RUN)]
 
 by = collections.defaultdict(list)
 for r in prod:

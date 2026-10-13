@@ -86,7 +86,7 @@ SLIDES = [
       <div class="card"><div class="k">Model</div><div class="big" style="font-size:56px">Gemma 3 12B</div><div class="sm">open weights; reviews never leave the seller's GPU</div></div>
     </div>{FOOT.replace('#6d6c6b', '#8c8b8a')}</div>""",
 
-    f"""<div class="s"><div class="k">Business value</div><h2>A size note costs nothing. A return costs $10–20 to handle.</h2>
+    f"""<div class="s"><div class="k">Business value</div><h2>A size note costs nothing. A return costs shipping, handling and often the sale.</h2>
     <div class="grid c3">
       <div class="card"><div class="k">Who</div><div class="q">Fashion sellers and rental shops with hundreds of reviews per item</div></div>
       <div class="card"><div class="k">What they get</div><div class="q">Which items run small or large, why else they come back, and the exact text and photo to add</div></div>
