@@ -57,8 +57,11 @@ items = []
 for item, rs in sorted(by.items()):
     p, n = products[item], len(rs)
     rep = reports.get(item, {})
-    examples = sorted((r for r in rs if r["fit"] in ("small", "large") and r["quote"]),
-                      key=lambda r: len(product_text[r["id"]]))[:4]
+    small_n = sum(r["fit"] == "small" for r in rs)
+    large_n = sum(r["fit"] == "large" for r in rs)
+    main = "small" if small_n >= large_n else "large"
+    # quotes for the item's main fit problem, shortest first, so the page shows the pattern rather than outliers
+    examples = sorted((r for r in rs if r["fit"] == main and r["quote"]), key=lambda r: len(product_text[r["id"]]))[:4]
     items.append({
         "item": item, "category": p["category"], "n_reviews": p["n_reviews"], "sampled": n,
         "true_small": p["true_small"], "true_large": p["true_large"],

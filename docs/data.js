@@ -117,11 +117,11 @@ window.WTR = {
      "fix": "Consider recommending customers who are between sizes to size up."
     },
     {
-     "text": "Receiving two different sizes worked out perfectly, especially since it arrived the day before. The size 4 fit my body better, but I needed the size 6 for my bust and shoulders.",
-     "fit": "large",
-     "quote": "I needed the size 6 for my bust and shoulders",
+     "text": "Great dress for a wedding! Definitely runs small.  I'm usually a 2/4 but could have used a 6 due to a tight band that wraps around the waist. Otherwise, a great look for a spring wedding and comfortable despite the tight fit!",
+     "fit": "small",
+     "quote": "runs small",
      "causes": [],
-     "fix": "Consider adding a note about potential sizing differences between the waist and bust/shoulders."
+     "fix": "Consider suggesting customers size up, especially if they have a larger waist."
     }
    ]
   },
@@ -213,13 +213,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Loved it!! I got so many compliments! The 4 fit as well but the 6 laid better p.  I was able to wear a strapless bra.",
-     "fit": "large",
-     "quote": "the 6 laid better",
-     "causes": [],
-     "fix": "Consider suggesting customers size down for a more flattering fit."
-    },
-    {
      "text": "Loved this dress! This dress was great! I thought I might not be able to zip up the back because my chest is larger for my body type, but fit perfectly. Received complements all night.",
      "fit": "small",
      "quote": "I thought I might not be able to zip up the back because my chest is larger for my body type",
@@ -243,6 +236,15 @@ window.WTR = {
       "other"
      ],
      "fix": "Consider adding a note recommending customers with larger chests size up."
+    },
+    {
+     "text": "Perfect for med school formal. For reference, I'm 5'8'', 125 lbs with 32A-34A bust, 25-26'' waist and 35-36'' hips. The 2L was really great, although it could have been more fitted in the waist and top. I could not have gotten by without 3-4'' heels. I probably should have ordered 0L as a backup instead of 4L, but overall cannot complain!",
+     "fit": "small",
+     "quote": "The 2L was really great",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider recommending heels for the best length and suggesting customers who prefer a more fitted look order a size down."
     }
    ]
   },
@@ -279,15 +281,6 @@ window.WTR = {
      "fix": "Consider suggesting customers size up if they prefer a looser fit around the waist."
     },
     {
-     "text": "Very pretty dress This would look good if you are tiny. Otherwise, the puffy bottom makes you look bigger than you are. Sadly this had to go back although in theory the dress is beautiful.",
-     "fit": "large",
-     "quote": "This would look good if you are tiny",
-     "causes": [
-      "style_vs_photo"
-     ],
-     "fix": "Consider adding a note about the dress's proportions and how it may not be flattering for all body types."
-    },
-    {
      "text": "In love with this dress!!! This dress is my favorite RTR pick hands down.  I received tons of compliments all night.  I did not want to send it back!!!   I ordered a 0 and a 2 - the 0 fit better and didn't have to wear a bra.   Not one wrinkle on this dress.  LOVE LOVE LOVE!!!",
      "fit": "small",
      "quote": "the 0 fit better",
@@ -303,6 +296,15 @@ window.WTR = {
       "other"
      ],
      "fix": "Consider adding a note about sizing up, as this dress may run small."
+    },
+    {
+     "text": "Overall it was a gorgeous dress and I would absolutely get it again. Tons of compliments. :) I ordered the 6R and 8R as backup. They fit nearly identical. The only difference to me was the 8R had more room in the bust. Both were pretty snug in the waist and, again, the 8R felt the same in the waist as the 6R.",
+     "fit": "small",
+     "quote": "pretty snug in the waist",
+     "causes": [
+      "comfort"
+     ],
+     "fix": "Consider mentioning that the waist may run snug for some customers."
     }
    ]
   },
@@ -394,24 +396,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "I haven't gone yet, it's tomorrow night I rented this dress but didn't wear it because it was WAY too short. I am 5'11 and got the 12L and  this dress hit just above my ankles. I also got the 14L but it was way too big. Glad I ordered a back up dress.",
-     "fit": "large",
-     "quote": "way too big",
-     "causes": [
-      "length"
-     ],
-     "fix": "Please note that this dress may run large, especially for taller customers."
-    },
-    {
-     "text": "Super flattering color and fit. So comfortable! I loved this dress. But beware...get the long if you are 5'5 or taller. Trust me. You'll be pulling it down all night. I love to wear heels and I ended up going with a 1.5 inch heel because the regular is very short.",
-     "fit": "large",
-     "quote": "get the long if you are 5'5 or taller",
-     "causes": [
-      "length"
-     ],
-     "fix": "Customers 5'5\" or taller may want to consider the longer length option."
-    },
-    {
      "text": "Divalicious! Ordered both the 6l & 8L decided on the 8L only because of the sleeves. On the 6L the sleeves were a little snug...I wore a regular bra and tucked in the draped part which didn't take away from the dress. I received numerous compliments even from the bride herself!",
      "fit": "small",
      "quote": "the sleeves were a little snug",
@@ -428,6 +412,22 @@ window.WTR = {
       "fabric_quality"
      ],
      "fix": "Consider mentioning that the dress may run slightly small, and renters might want to size up."
+    },
+    {
+     "text": "Gorgeous! This dress was absolutely gorgeous and it was beautifully made. Unfortunately, the other dress I rented along with it fit me so much better and was just as beautiful. Definitely would like to rent this again but in a 0P. It does have some give to it so hopefully they'll come out with a 00P ;)",
+     "fit": "small",
+     "quote": "fit me so much better",
+     "causes": [],
+     "fix": "Consider offering additional sizes, such as 00P, to accommodate a wider range of body types."
+    },
+    {
+     "text": "So many compliments, fit perfectly! Very comfortable to wear all night. Runs short! I wore this for a bridesmaids dress. It definitely runs short so I chose L size and even that was a little short with heels. I wore my own nude bra with a backless converter that I also bought through RTR. I definitely recommend this dress! It fit like a glove, and I received compliments all night long!",
+     "fit": "small",
+     "quote": "It definitely runs short",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider adding a note about the dress running shorter than expected, especially for taller individuals."
     }
    ]
   },
@@ -459,15 +459,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Loved it.  I'm usually a dress size 2, but sized up for this one. It was a tid bit on the long side, but I could have gone higher on the heels.",
-     "fit": "small",
-     "quote": "sized up for this one",
-     "causes": [
-      "length"
-     ],
-     "fix": "Consider adding a note about the dress running small, and suggesting customers size up."
-    },
-    {
      "text": "Attended prom theme birthday party. Felt like I received my h.s prom. Loved it !  Cons: I'm small in the bust area dress was a bit lose on the strapless side but not to the point of needing alterations.\nPros: Fit perfect every where else",
      "fit": "large",
      "quote": "a bit lose on the strapless side",
@@ -477,18 +468,29 @@ window.WTR = {
      "fix": "Consider adding a note about potential gapping on strapless styles for those with a smaller bust."
     },
     {
-     "text": "This was a beautiful fit! It was the perfect dress for a NYE wedding. The dress is mostly true to size. I was advised to size down just because of the stretch in the dress. I'm normally 4-6 but did wind up wearing a 2 since the dress stretched that much.",
-     "fit": "small",
-     "quote": "I was advised to size down just because of the stretch in the dress. I'm normally 4-6 but did wind up wearing a 2",
-     "causes": [],
-     "fix": "Consider adding a note about the dress's stretch and recommending sizing down for a more fitted look."
-    },
-    {
      "text": "Amazing, comfortable dress! So many compliments on this dress! It was fun to wear and was really comfortable. I wear a size down because I liked the way it fit better. The dress was very flattering. I felt amazing in this dress and definitely recommend it!",
      "fit": "large",
      "quote": "I wear a size down because I liked the way it fit better.",
      "causes": [],
      "fix": "Consider suggesting customers size down for a more flattering fit."
+    },
+    {
+     "text": "Great dress! Fun to wear. The slit up the leg makes it sassy. It worked great. I got the 6 and 8 but chose the 6 because the length was better for me. The 8 was a bit too long.  I'm not big on one shoulder dresses but this one worked great.  Overall, a great dress!",
+     "fit": "large",
+     "quote": "The 8 was a bit too long",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider adding a note about the length running long, especially for shorter customers."
+    },
+    {
+     "text": "Beautiful gown! I ordered the 12L, with a 10L backup and a 14L (Just in case).  The 10L fit great,  but was a bit short, the 12L was a little roomy, but better in length, the 14L was the perfect length, but huge.  Ultimately I wore the 12L and received compliments all night.",
+     "fit": "large",
+     "quote": "the 12L was a little roomy",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider noting that the dress may run a bit large, especially in the bust or shoulders."
     }
    ]
   },
@@ -606,11 +608,13 @@ window.WTR = {
      "fix": "Consider adding a note about the dress running small for those with a larger bust."
     },
     {
-     "text": "I received to TON of complements on this dress!!!  I ordered both the large and the XL. I chose to wear the XL because it was a little longer and I wanted the extra hip room. The dress is also comfortable.",
-     "fit": "large",
-     "quote": "I ordered both the large and the XL",
-     "causes": [],
-     "fix": "Consider adding a note about sizing up for those wanting extra hip room."
+     "text": "Perfect Vegas going out dress! Amazing dress! Perfect for a girls night out in Vegas. The sequins were a bit scratchy for dinner but otherwise it was so fun to wear. Sizing was standard or a hint on the small side.",
+     "fit": "small",
+     "quote": "a hint on the small side",
+     "causes": [
+      "fabric_quality"
+     ],
+     "fix": "Consider mentioning that the dress runs slightly small, and customers may want to size up."
     }
    ]
   },
@@ -648,15 +652,6 @@ window.WTR = {
      "fix": "Consider adding a belt recommendation to the listing to help define the waist."
     },
     {
-     "text": "beautiful runs a bit small, and there is no give in the material at all. however, really beautiful, really flattering, classic, gorgeous. i wished i could have kept it.",
-     "fit": "small",
-     "quote": "runs a bit small",
-     "causes": [
-      "fabric_quality"
-     ],
-     "fix": "Consider adding a note to the listing that the garment runs small and customers may want to size up."
-    },
-    {
      "text": "This dress made me feel glamorous! I originally ordered this dress in red but it was unavailable in my size so I wore the black version. I really like the cut of the dress even though it was a little big up top. I also liked the length.",
      "fit": "large",
      "quote": "it was a little big up top",
@@ -674,6 +669,15 @@ window.WTR = {
       "fabric_quality"
      ],
      "fix": "Consider adding a note about potential gapping in the armhole area and recommending a supportive bra."
+    },
+    {
+     "text": "Black Tie Wedding Beautiful, elegant dress. I planned on wearing the 4 as I have a good size \"bubble butt\".  However, the 4 was a bit baggy in the chest, whereas with the 2 I didn't have to wear a bra. Luckily the dress has a bit of stretch to it so the 2 was fine and I was able to sit comfortably. I wore 3.25 inch heels and the length was perfect.",
+     "fit": "large",
+     "quote": "a bit baggy in the chest",
+     "causes": [
+      "comfort"
+     ],
+     "fix": "Consider mentioning that the dress may run large in the bust and customers might want to size down."
     }
    ]
   },
@@ -704,13 +708,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "The customer service was awesome.  The dress didn't quite fit, but overall great process",
-     "fit": "small",
-     "quote": "didn't quite fit",
-     "causes": [],
-     "fix": "Consider adding a note about potential sizing inconsistencies."
-    },
-    {
      "text": "Classic Gown I liked it, however it ran a little big in the bust and I'm pretty busty sooo.",
      "fit": "large",
      "quote": "ran a little big in the bust",
@@ -720,13 +717,6 @@ window.WTR = {
      "fix": "Consider adding a note about the gown running slightly large in the bust area."
     },
     {
-     "text": "Compliments ALL night long!  I love this dress! I am glad I had the backup size, I needed the 4L and it fit like a glove.",
-     "fit": "small",
-     "quote": "I needed the 4L",
-     "causes": [],
-     "fix": "Consider adding a note to the listing advising customers to size up, as this style may run small."
-    },
-    {
      "text": "Didn't end up wearing this dress. Would have been very nice if it fit. Very stretchy fabric. Too large every where on me. Wouldn't even stay up.",
      "fit": "large",
      "quote": "Too large every where on me",
@@ -734,6 +724,24 @@ window.WTR = {
       "length"
      ],
      "fix": "Consider adding a note about the dress running large and recommending customers check measurements carefully."
+    },
+    {
+     "text": "It was my son's wedding.  I got so many compliments on the dress\n It was a little too big for me.  I should have ordered the size 6.  I had to pull it up constantly",
+     "fit": "large",
+     "quote": "It was a little too big for me.",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider adding a note about the dress running slightly large, and recommending customers check the size chart carefully."
+    },
+    {
+     "text": "This dress was gorgeous. A little big but really beautiful.  Dress was a little loose  mostly due to stretching, I think. Otherwise, very beautiful. Fit was pretty good. Length was perfect.",
+     "fit": "large",
+     "quote": "A little big",
+     "causes": [
+      "fabric_quality"
+     ],
+     "fix": "Consider mentioning that the fabric may be prone to stretching."
     }
    ]
   },
@@ -764,22 +772,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Comfortable!  This dress was fun, and comfy - runs a bit large!",
-     "fit": "large",
-     "quote": "runs a bit large!",
-     "causes": [],
-     "fix": "Consider adding a note to the listing suggesting customers may want to size down."
-    },
-    {
-     "text": "worn for an awards dinner  flared out at the hips more than i would have liked",
-     "fit": "large",
-     "quote": "flared out at the hips more than i would have liked",
-     "causes": [
-      "style_vs_photo"
-     ],
-     "fix": "Consider adding a note about the relaxed fit through the hips."
-    },
-    {
      "text": "Nice but too tight for my bust I'm a little busty and couldn't get this zipped without smushing. I'd say go up a size if you are top heavy.",
      "fit": "small",
      "quote": "couldn't get this zipped without smushing",
@@ -792,6 +784,25 @@ window.WTR = {
      "quote": "both wouldn't zip all the way!",
      "causes": [],
      "fix": "Consider advising customers to size up, as this garment may run smaller than expected in the bust and back."
+    },
+    {
+     "text": "Fun and Festive  I loved the print and the full skirt.. but the material had no stretch and it was tight / uncomfortable around my chest and shoulders.",
+     "fit": "small",
+     "quote": "it was tight / uncomfortable around my chest and shoulders",
+     "causes": [
+      "comfort",
+      "fabric_quality"
+     ],
+     "fix": "Consider adding a note about the fabric lacking stretch and potentially running small in the chest and shoulders."
+    },
+    {
+     "text": "Wore this dress to a NYE wedding it was perfect for the event!  It is a bit tight around the arms, it rubbed my arms all night to where my arms were sore next day.",
+     "fit": "small",
+     "quote": "a bit tight around the arms",
+     "causes": [
+      "comfort"
+     ],
+     "fix": "Consider mentioning that the dress may be snug around the arms for some wearers."
     }
    ]
   },
@@ -1019,16 +1030,6 @@ window.WTR = {
      "fix": "Consider adding a note about the dress's length, especially for taller customers."
     },
     {
-     "text": "The material is thin and it's mini! I liked the dress, but found it to be too short and very form fitting.  It was not flattering on me.",
-     "fit": "small",
-     "quote": "very form fitting",
-     "causes": [
-      "length",
-      "style_vs_photo"
-     ],
-     "fix": "Consider adding a note about the dress being shorter than expected and having a fitted silhouette."
-    },
-    {
      "text": "It is a beautiful Dress This was a nice dress but the shoulders were really big on me! Which is weird because I have wide shoulders. Would recommend ordering a smaller size.",
      "fit": "large",
      "quote": "ordering a smaller size",
@@ -1043,6 +1044,16 @@ window.WTR = {
       "style_vs_photo"
      ],
      "fix": "Consider mentioning the looser sides near the open back in the description to manage expectations."
+    },
+    {
+     "text": "Beautiful lace overlay Fit well, a bit short when sitting.  size 6 was too loose due to the open back (probably not an issue if you are a bit bustier). Minor damage to the lace on the back, but was not very noticeable. Gorgeous silver lace that photographs beautifully.",
+     "fit": "large",
+     "quote": "size 6 was too loose",
+     "causes": [
+      "length",
+      "fabric_quality"
+     ],
+     "fix": "Consider adding a note about the dress running large, especially for those with a smaller bust."
     }
    ]
   },
@@ -1074,13 +1085,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Work party dress Ordered this for a work party and it was perfect. Fit well, but maybe a little loose.",
-     "fit": "large",
-     "quote": "a little loose",
-     "causes": [],
-     "fix": "Consider mentioning that the dress may run slightly loose for some body types."
-    },
-    {
      "text": "Very pretty dress! Beautiful dress but it was a little too tight in the midsection. The length was perfect and the quality was good.",
      "fit": "small",
      "quote": "a little too tight in the midsection",
@@ -1103,6 +1107,15 @@ window.WTR = {
      "quote": "I sized up to have more room for dancing",
      "causes": [],
      "fix": "Consider mentioning that sizing up may be needed for those who plan to dance."
+    },
+    {
+     "text": "Great dress! I loved this dress!  The sleeves were a little tight and itchy but that was not a deal breaker.  I found the 6 to be a little too long on me, even though it fit better everywhere else.  So I went with the size 4 because I liked the length, even though it was pretty snug.  Overall a success!",
+     "fit": "small",
+     "quote": "a little too long on me",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider adding a note about the dress running long, especially for shorter customers."
     }
    ]
   },
@@ -1152,21 +1165,23 @@ window.WTR = {
      "fix": "Consider mentioning that the top may run slightly large and fashion tape could be helpful."
     },
     {
-     "text": "I loved this dress! Ordered the 2 and the 4 and ended up wearing the 2. It was a bit snug, but definitely more flattering then the 4. Received many compliments. Would love to buy this dress.",
-     "fit": "small",
-     "quote": "a bit snug",
-     "causes": [],
-     "fix": "Consider recommending customers who are between sizes to size up."
+     "text": "Beautiful color I loved the color, the material was heavy and beautiful but puckered out around the chest in a weird way and had to be secured to not look funny.  I loved how it flowed when I walked.  It was also a bit loose.",
+     "fit": "large",
+     "quote": "It was also a bit loose.",
+     "causes": [
+      "fabric_quality",
+      "comfort"
+     ],
+     "fix": "Consider adding a note about the fit being slightly loose around the chest and recommending pinning or tailoring for a more secure fit."
     },
     {
-     "text": "Love the length in the front - gives the impression of a long gown, but able to move. The dress is beautiful, but it's super tight around the rib cage, and the material in that area doesn't stretch, so beware!",
-     "fit": "small",
-     "quote": "super tight around the rib cage",
+     "text": "Flattering dress. I have an hourglass body shape, with a larger bust, and this dress was actually almost too big in the chest but was still able to wear it confidently.  I loved the blue color and received many compliments all evening.",
+     "fit": "large",
+     "quote": "almost too big in the chest",
      "causes": [
-      "comfort",
-      "fabric_quality"
+      "comfort"
      ],
-     "fix": "Consider adding a note about the lack of stretch in the rib cage area."
+     "fix": "Consider recommending that customers with a larger bust size may want to size down."
     }
    ]
   },
@@ -1203,22 +1218,6 @@ window.WTR = {
      "fix": "Consider recommending that customers size up if they are between sizes."
     },
     {
-     "text": "It's a true ball gown made for a special event It runs slightly big, if you're short, be mindful to get a regular fit.",
-     "fit": "large",
-     "quote": "It runs slightly big",
-     "causes": [],
-     "fix": "Consider recommending a size down for shorter customers."
-    },
-    {
-     "text": "Beautiful and Elegant This dress fit perfectly from the ankles up. It was a touch too long so I just went and bought higher shoes. Next time I will get a petite dress. Customer Service was phenomenal in helping me place my first order.",
-     "fit": "large",
-     "quote": "It was a touch too long",
-     "causes": [
-      "length"
-     ],
-     "fix": "Consider adding a note about the dress length being long, especially for those who typically wear petite sizes."
-    },
-    {
      "text": "#michelleobamavibes Beautiful dress. Very light. Very airy. Zipper does suck but was fine when I went a size up. Got so many compliments that I look like michelle obama so there's that. This was my first time renting and I' will definitely do it again",
      "fit": "small",
      "quote": "when I went a size up",
@@ -1226,6 +1225,24 @@ window.WTR = {
       "zipper_or_closure"
      ],
      "fix": "Consider reinforcing or replacing the zipper to ensure a smoother closure."
+    },
+    {
+     "text": "Felt like a princess! I loved this dress! As others have said, it is pretty warm. A slit would have been a nice detail, but its still a gorgeous gown. The pockets are fantastic! This dress has NO stretch, so if you have a large chest, consider sizing up.",
+     "fit": "small",
+     "quote": "if you have a large chest, consider sizing up",
+     "causes": [
+      "other"
+     ],
+     "fix": "Consider sizing up if you have a larger chest, as this dress has no stretch."
+    },
+    {
+     "text": "Gown was beautiful.  Fit: I selected a 6L and an 8R and wore the 8R because the 6 was too tight for me in the bust area. \nPros: Gown is beautiful. Length was great. Fit my body type perfectly. \nCons: None in my opinion\nOTHER: Dress color is not as dark red as it appears in the pictures.",
+     "fit": "small",
+     "quote": "the 6 was too tight for me in the bust area",
+     "causes": [
+      "colour_vs_photo"
+     ],
+     "fix": "Consider adding a note about potential fit issues in the bust for those with a larger bust size."
     }
    ]
   },
@@ -1283,13 +1300,11 @@ window.WTR = {
      "fix": "Consider suggesting renters size down if they are between sizes."
     },
     {
-     "text": "It was not the dress for me.  I need a little more give. I was pretty.  But not the dress for me - I usually wear a 12 - and got the 14 as a back up and both were too tight across my midsection.",
-     "fit": "small",
-     "quote": "both were too tight across my midsection",
-     "causes": [
-      "comfort"
-     ],
-     "fix": "Consider adding a note about the garment running small, especially around the midsection."
+     "text": "beautiful neckline and front split- beautiful but conservative- good for work event-simply beautiful fit well all around a bit big in the waist but a size small would have been too tight in hips-",
+     "fit": "large",
+     "quote": "a bit big in the waist",
+     "causes": [],
+     "fix": "Consider mentioning that the waist may run a little large for some body types."
     }
    ]
   },
@@ -1345,13 +1360,13 @@ window.WTR = {
      "fix": "Consider reinforcing the lining or adjusting the shoulder seams for a better fit."
     },
     {
-     "text": "nice dress Did not have a chance to wear it, changed my mind last minute. The dress is nice, but its a little too big on top for me and the decollete  is too large. Ordered size Small it fit well, but not what i expected.",
-     "fit": "large",
-     "quote": "a little too big on top for me",
+     "text": "I wore this dress to a pageant to cheer on my friend who competed and I got compliments ALL night!!! Fit is kinda tight, i recommend going one size up. hard to get into because of the delicate beading but overall definitely worth it!!!",
+     "fit": "small",
+     "quote": "i recommend going one size up",
      "causes": [
-      "style_vs_photo"
+      "zipper_or_closure"
      ],
-     "fix": "Consider adding a note about the fit being generous in the bust for some body types."
+     "fix": "Consider advising customers to size up for a more comfortable fit, especially due to the delicate beading."
     }
    ]
   },
@@ -1404,13 +1419,11 @@ window.WTR = {
      "fix": "Consider adding a note about the dress potentially running small in the bust."
     },
     {
-     "text": "A Birthday Extravaganza As most of the reviews reveal, the dress is wearable without a bra and is longer in person than shown on the model. I do think that it runs slightly large, but is mostly true to size. I did fit into the size 6, but the cleavage was over the top for me, so I ended up wearing the 8. The pockets also a major plus, and overall a very lovely, fun party dress!",
-     "fit": "large",
-     "quote": "it runs slightly large",
-     "causes": [
-      "colour_vs_photo"
-     ],
-     "fix": "Consider adding a note about the dress running slightly large and recommending customers check size charts carefully."
+     "text": "Low-cut but very flattering I rented this for a company holiday party and ended up going with a backup dress because it was too low-cut in the front. If it hadn't been for a party of coworkers I would have rocked this - it's so flattering, and it's easy to wear with a regular bra with a little plunge! And the best part - it has pockets!! I usually wear an 8 but this fit perfectly in a 6.",
+     "fit": "small",
+     "quote": "this fit perfectly in a 6",
+     "causes": [],
+     "fix": "Consider mentioning the dress runs a bit small, and customers may want to size down."
     }
    ]
   },
@@ -1498,13 +1511,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "sexiness This dress is very fun but beware...it is also VERY form fitting:)",
-     "fit": "small",
-     "quote": "VERY form fitting",
-     "causes": [],
-     "fix": "Consider adding a note about the dress being very form-fitting to help customers choose the right size."
-    },
-    {
      "text": "Tons of complements on my bachelorette, fit perfectly, great fabric, in love!  I'm usually 4 but 2 fit better. The dress is great for any party event! Loved wearing it. Made me feel special.",
      "fit": "large",
      "quote": "I'm usually 4 but 2 fit better.",
@@ -1528,6 +1534,13 @@ window.WTR = {
       "length"
      ],
      "fix": "Consider noting that the dress may gap slightly in the shoulders for shorter individuals."
+    },
+    {
+     "text": "This dress turned heads everywhere I went! I tried both the 0 and 2 since I wear both sizes pretty regularly. Both sizes zipped pretty well but I felt like the larger size fell a lot more attractively and gave me a little more room to eat and drink whatever I wanted.",
+     "fit": "large",
+     "quote": "the larger size fell a lot more attractively",
+     "causes": [],
+     "fix": "Consider mentioning that the dress may run a bit small, and sizing up could provide a more comfortable and flattering fit."
     }
    ]
   },
@@ -1578,13 +1591,6 @@ window.WTR = {
      "fix": "Consider mentioning the sequin fabric may cause slight discomfort or itching, especially under the arms."
     },
     {
-     "text": "Beautiful Dress I absolutely loved this dress!  I got compliments on it all night! The only problem is I thougt it ran a little big.  It still looked beatiful though!  The back was the highlight?",
-     "fit": "large",
-     "quote": "ran a little big",
-     "causes": [],
-     "fix": "Consider adding a note to size down for a more fitted look."
-    },
-    {
      "text": "Knocking the socks off my amazing Airman! The dress was amazing. I was a little scratched up under the arms from my arms rubbing on the material but over all I loved it. A little tight in the back area but the midsection was true to size. The dress is prettier in person for sure!",
      "fit": "small",
      "quote": "A little tight in the back area",
@@ -1592,6 +1598,15 @@ window.WTR = {
       "comfort"
      ],
      "fix": "Consider adding a note about the dress potentially running slightly tight in the back."
+    },
+    {
+     "text": "Great Holiday dress! I rented this dress for my work Christmas party.  It was very cute!  I usually wear a 4, but decided to wear the 6...the 4 was just a little to tight and short.  The fabric is great..very festive!  Although the sequins did rub on my arms, I didn't mind because the dress was so cute!",
+     "fit": "small",
+     "quote": "the 4 was just a little to tight and short",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider noting that the dress runs slightly small and may be shorter than expected."
     }
    ]
   },
@@ -1622,27 +1637,11 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Size down!  Cute, but lace doesn't pop in pictures or in a dark room. Runs very big in my opinion.",
-     "fit": "large",
-     "quote": "Runs very big",
-     "causes": [
-      "colour_vs_photo"
-     ],
-     "fix": "Consider adding a note to size down for a more accurate fit."
-    },
-    {
      "text": "How easy it was to get a dress for my event. Dress was gorgeous, the sizing just ran a little small.",
      "fit": "small",
      "quote": "sizing just ran a little small",
      "causes": [],
      "fix": "Consider adding a note to the listing advising customers to size up."
-    },
-    {
-     "text": "Really enjoyed wearing this dress!  fit well could have used a smaller size but may not of fit through the hips.",
-     "fit": "large",
-     "quote": "could have used a smaller size",
-     "causes": [],
-     "fix": "Consider suggesting customers size down, as this style may run slightly large."
     },
     {
      "text": "Tight on top; loose in midriff  Not worn, dress was too tight on shoulders but too loose around my stomach. Uncomfortable",
@@ -1652,6 +1651,22 @@ window.WTR = {
       "comfort"
      ],
      "fix": "Consider adding a note about the dress fitting snugly in the shoulders."
+    },
+    {
+     "text": "Beautiful dress\n I have broad shoulders so I choose to wear a size larger than I normally wear.  The lace top was tight on me but otherwise the dress was very comfortable.",
+     "fit": "small",
+     "quote": "The lace top was tight on me",
+     "causes": [
+      "comfort"
+     ],
+     "fix": "Consider mentioning that the lace top may fit snugly, especially for those with broader shoulders."
+    },
+    {
+     "text": "Great experience! Loved the dress. Loved the dress! It was fitted but still classy. I'm usually a 4 but I ended up wearing a 6. I recommend ordering a size bigger than you typically wear.",
+     "fit": "small",
+     "quote": "I recommend ordering a size bigger than you typically wear.",
+     "causes": [],
+     "fix": "Consider adding a note to the listing recommending customers size up."
     }
    ]
   },
@@ -1760,13 +1775,11 @@ window.WTR = {
      "fix": "Consider adding a note to the listing advising customers to size up, especially if they are busty."
     },
     {
-     "text": "Nice pattern, good for winter/fall occasion.  Pretty pattern, but the cut of the dress made me look way larger than I really am. I wouldn't recommend this dress for a person with a narrow figure.",
-     "fit": "large",
-     "quote": "the cut of the dress made me look way larger than I really am",
-     "causes": [
-      "style_vs_photo"
-     ],
-     "fix": "Consider adding a note about the dress's cut potentially adding volume, especially for those with a narrower figure."
+     "text": "A great party dress... I had to wear my size up because the eight was a bit tight across the chest.  Wearing the 10 did make the skirt a bit fuller but it was very comfortable and looked great.  I loved the pockets...",
+     "fit": "small",
+     "quote": "the eight was a bit tight across the chest",
+     "causes": [],
+     "fix": "Consider suggesting customers size up if they are bustier."
     }
    ]
   },
@@ -1811,20 +1824,23 @@ window.WTR = {
      "fix": "Consider mentioning that the dress runs slightly small through the waist."
     },
     {
-     "text": "So comfortable! This was my free birthday dress, and I loved it. I actually wore it all day (covered the mesh portion with a blazer and cami for work, then wore it as is for my date night) and it was really comfortable. I think I could have gone down a size given the stretch in the fabric but the 10 wasn't available for my dates.",
-     "fit": "large",
-     "quote": "I think I could have gone down a size",
-     "causes": [],
-     "fix": "Consider mentioning the dress has a generous fit and customers may want to size down."
+     "text": "Love the mesh Great fit and flare dress. I loved the mesh detail on the neck and back. Skirt flares out a lot and is kind of poufy but I like that. The bodice is pretty tight but I am a 36DD. Arms were a little tight as well but the material does stretch. I am 5'9\" and the dress was long enough (possibly slightly too long for what I wanted, comes down almost to knee).",
+     "fit": "small",
+     "quote": "The bodice is pretty tight",
+     "causes": [
+      "length",
+      "comfort"
+     ],
+     "fix": "Consider recommending a size up for those with a larger bust or wider shoulders."
     },
     {
-     "text": "Simply classy. This dress is so comfortable! I usually wear a size 4, but the size 2 fit way better, with a tiny bit of extra room around the waist. The fabric was high quality, and the overall design and details were perfect for the event I attended (which was my husband's graduation). The v-neck line makes the whole look even more flattering.",
-     "fit": "large",
-     "quote": "the size 2 fit way better",
+     "text": "Perfect for a fall wedding! I loved everything about this dress and was so upset that it had to be returned! The spandex top made a wonderful slimming fit and the skirt with pockets was perfect for dancing and being comfortable all day. The material is a little heavier, but I was hoping for that since it was a cooler fall day in New York. If you are larger on top, I would recommend going up a size--I could see the sl",
+     "fit": "small",
+     "quote": "If you are larger on top, I would recommend going up a size--I could see the sleeves being tight with a larger bust.",
      "causes": [
-      "fabric_quality"
+      "other"
      ],
-     "fix": "Consider recommending that customers size down for a more tailored fit."
+     "fix": "Consider adding a note about the sleeves potentially running small for those with a larger bust."
     }
    ]
   },
@@ -1938,11 +1954,11 @@ window.WTR = {
      "fix": "Consider adding a note to the listing advising customers to size up, especially if they are busty or have a larger waist."
     },
     {
-     "text": "This dress ran a little big, but I absolutely loved it. I was complimented all night on it. The shape of the dress is very flattering and it is a very comfortable dress. It runs a little large. The extra small was even a little big on me and I am typically a size 2.",
-     "fit": "large",
-     "quote": "ran a little big",
+     "text": "rehearsal dinner So perfect for a pear.  Fit like a glove, no need for a bra.  Also was very flattering the way it flared out on the hips.  I want to own this dress.  My sister is a size 0/2 and rented the small and said it looked terrible and was too big.  So be careful if you're tiny.",
+     "fit": "small",
+     "quote": "looked terrible and was too big",
      "causes": [],
-     "fix": "Consider suggesting customers size down, especially those who typically wear a size 2."
+     "fix": "Consider adding a note to the listing advising petite customers to size down."
     }
    ]
   },
@@ -2095,13 +2111,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "This dress looked great for a summer outdoor work event. Looks great on - I thought it ran slightly big.",
-     "fit": "large",
-     "quote": "ran slightly big",
-     "causes": [],
-     "fix": "Consider adding a note to size down for a more fitted look."
-    },
-    {
      "text": "I love the fit and fabric of this dress!  On a bigger bust the top might not fit properly. It curves in a lot, so don't get a size smaller.",
      "fit": "small",
      "quote": "On a bigger bust the top might not fit properly",
@@ -2123,6 +2132,13 @@ window.WTR = {
       "comfort"
      ],
      "fix": "Consider advising customers to size up, especially around the waist."
+    },
+    {
+     "text": "Favorite rental of all time!   Perfect for a day trip in New England, followed by a beach trip.  Rented and wore the 2 (I'm usually a 4), since previous reviews said top was on the larger side.",
+     "fit": "small",
+     "quote": "top was on the larger side",
+     "causes": [],
+     "fix": "Consider adding a note to size down for a more fitted look."
     }
    ]
   },
@@ -2152,15 +2168,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "Great look! This was awesome but curves can make it ride up in certain areas. I went a size up and it was perfect.",
-     "fit": "small",
-     "quote": "I went a size up and it was perfect",
-     "causes": [
-      "comfort"
-     ],
-     "fix": "Consider adding a note about the garment potentially riding up for those with curves, and recommending sizing up."
-    },
-    {
      "text": "I am 5'2\" and it was a bit to large overall, it worked but I would have liked it to be more tailored too long and overall large for my frame",
      "fit": "large",
      "quote": "a bit to large overall",
@@ -2184,6 +2191,15 @@ window.WTR = {
      "quote": "It runs a little large, so size down.",
      "causes": [],
      "fix": "Consider adding a note to the listing advising customers to size down for a more fitted look."
+    },
+    {
+     "text": "I rented this for a rehearsal dinner party. This is an awesome outfit! I typically wear size 4, but because I am shorter I rented a size 2.  I'm glad I did.  It was still a little long, but with heels it worked just fine! I ould definitely rent again.",
+     "fit": "large",
+     "quote": "I rented a size 2",
+     "causes": [
+      "length"
+     ],
+     "fix": "Consider noting that the garment may run large, especially for those of shorter stature."
     }
    ]
   },
@@ -2223,13 +2239,6 @@ window.WTR = {
      "fix": "Consider adding a note about the dress being slightly loose for petite frames."
     },
     {
-     "text": "Awesome dress really stood out from the crowd and was comfortable for dancing 0R perfect for wearing flats at 5'7 - if I was wearing heels i would have needed the 0L for sure.  Gorgeous dress.",
-     "fit": "small",
-     "quote": "if I was wearing heels i would have needed the 0L for sure",
-     "causes": [],
-     "fix": "Consider adding a note recommending customers wearing heels size up."
-    },
-    {
      "text": "Perfect prom dress! timeless  I am a size 4 but the 4 was not available, so I made it work with the size 6 and four safety pins. The neckline looks amazing in person and even though the dress was a bit loose on me, the silhouette made me stand out.",
      "fit": "large",
      "quote": "a bit loose on me",
@@ -2237,13 +2246,22 @@ window.WTR = {
      "fix": "Consider suggesting customers may want to size down for a more fitted silhouette."
     },
     {
-     "text": "Stunning! I recently lost 70+lbs and this was the perfect coming out dress! Really wow' everyone when I walked in the room in this gorgeous red dress. Slimming fit and I wore a strapless bra just fine. I do have a large chest and it was a bit tight but other than that it was perfect.",
-     "fit": "small",
-     "quote": "it was a bit tight",
+     "text": "Striking!! I ordered a 2L because a 0L wasn't available and I knew I needed the length. The dress was beautiful but fit bigger than I would've liked in the waist. I quickly (and temporarily) took in the back seams, which helped the fit and silhouette a lot. With the quick adjustment, it turned out to be an amazing dress for the night.",
+     "fit": "large",
+     "quote": "fit bigger than I would've liked in the waist",
      "causes": [
-      "comfort"
+      "other"
      ],
-     "fix": "Consider adding a note about the dress fitting snugly for those with a larger bust."
+     "fix": "Consider noting that the dress may run a bit large, especially in the waist, for some customers."
+    },
+    {
+     "text": "I didn't stop getting compliments on my dress! Absolutely beautiful dress! Perfect length if you have HIGH heels that you're planning on wearing with it. The size fit perfectly, except for the mid section. It was a bit loose in the belly and the lower back; I would have preferred a more fitting section (especially in the back area) to show my curves a little better. Overall, great dress though!",
+     "fit": "large",
+     "quote": "It was a bit loose in the belly and the lower back",
+     "causes": [
+      "style_vs_photo"
+     ],
+     "fix": "Consider adding a note about the dress being slightly loose in the midsection and potentially better suited for those with a straighter figure."
     }
    ]
   },
@@ -2295,11 +2313,14 @@ window.WTR = {
      "fix": "Consider suggesting customers size down for a more tailored fit."
     },
     {
-     "text": "Memorable I wore a size smaller than I usually do and it fit snugly. This dress is classy and easy to wear. The beading around the waist is really a nice touch. The color pops in a crowd.",
-     "fit": "small",
-     "quote": "I wore a size smaller than I usually do and it fit snugly.",
-     "causes": [],
-     "fix": "Consider suggesting customers check the size chart carefully, as this style may run a bit small."
+     "text": "Looks great and very comfortable; was a little loose (i.e., not tight) Unfortunately this dress had smells of BO in the underarm area. Additionally there was a rip at the bottom of the zipper however it was not noticeable.",
+     "fit": "large",
+     "quote": "was a little loose",
+     "causes": [
+      "fabric_quality",
+      "other"
+     ],
+     "fix": "Consider adding a note about the dress running slightly loose and recommending customers check the size chart carefully."
     }
    ]
   },
@@ -2330,15 +2351,6 @@ window.WTR = {
    },
    "examples": [
     {
-     "text": "I loved this dress for my 25th Birthday Photo Shoot. Very elegant! The dress fit. I have a small waist the dress was a little loose. But I love this dress!!!",
-     "fit": "large",
-     "quote": "the dress was a little loose",
-     "causes": [
-      "length"
-     ],
-     "fix": "Consider mentioning that the dress may be loose on those with a smaller waist."
-    },
-    {
      "text": "Gorgeous dress I ordered the 10 and 12 but ended up wearing the 12. The 10 fit but because I have a booty and wide back it was snug. The 12 fit well and everyone complimented it all night. Wore high heels to keep it off the ground.",
      "fit": "small",
      "quote": "it was snug",
@@ -2365,6 +2377,15 @@ window.WTR = {
       "comfort"
      ],
      "fix": "Consider mentioning that the fabric is not very stretchy, especially in the bust area, and to size up if you have a larger bust."
+    },
+    {
+     "text": "I loved this dress and received many compliments. It is fitted and great detail, but classic.  It was very difficult and tight to get over my wide hips, so had to go with a 12 (I'm usually a 10) but felt like a million bucks in it. Received compliments, photographed well, and the bride told me a month later that people had commented on it being a nice dress - they didn't know me (or my name).",
+     "fit": "small",
+     "quote": "very difficult and tight to get over my wide hips",
+     "causes": [
+      "comfort"
+     ],
+     "fix": "Consider adding a note about the dress being fitted and potentially challenging to wear for those with wider hips."
     }
    ]
   },
@@ -2458,13 +2479,6 @@ window.WTR = {
      "fix": "Consider advising customers to size down, as this dress appears to run large."
     },
     {
-     "text": "Tons of compliments I went down 2 sizes and I could have gone down 3. Glad I read the reviews!",
-     "fit": "small",
-     "quote": "I went down 2 sizes and I could have gone down 3",
-     "causes": [],
-     "fix": "Consider advising customers to size down, as this garment appears to run large."
-    },
-    {
      "text": "Beautiful! Loved this dress, so flattering.  Runs super large!!! I normally wear a 6, and the 0 fit just right.",
      "fit": "large",
      "quote": "Runs super large!!!",
@@ -2479,6 +2493,13 @@ window.WTR = {
       "length"
      ],
      "fix": "Consider mentioning that the dress may run slightly large on some body types, particularly around the shoulders."
+    },
+    {
+     "text": "Red dress with a little cleavage This dress is a nice basic red dress. I found it hard to find a bra to wear underneath that did not show. Perhaps I should have gone a size down.",
+     "fit": "large",
+     "quote": "Perhaps I should have gone a size down.",
+     "causes": [],
+     "fix": "Consider adding a note about potential sizing issues or bra visibility."
     }
    ]
   }
