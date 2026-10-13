@@ -40,7 +40,7 @@ Throughput: {RPS} reviews/s on one {GPU} (bf16, ROCm {HIP}, PyTorch {TORCH}, bat
 3. **Write** (`summarize_amd.py`, Gemma). A second pass sees only the counts and real quotes and writes the size
    note, the description sentence and the photo to add.
 
-The demo page (`site/`) is static and shows the recorded output of these runs; `build_site.py` builds its data from
+The demo page (`docs/`, served by GitHub Pages) is static and shows the recorded output of these runs; `build_site.py` builds its data from
 the run files in `out/`, so every number on the page can be recomputed.
 
 ## Reproduce

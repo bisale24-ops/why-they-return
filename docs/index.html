@@ -123,7 +123,7 @@ tr.win td { background: linear-gradient(90deg, rgba(228,242,34,.35), rgba(228,24
 
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .step .k { font-family: var(--mono); font-size: 13px; color: var(--ash); }
-.step h4 { font-weight: 400; font-size: 22px; margin-top: 10px; }
+.step h3 { font-weight: 400; font-size: 22px; margin-top: 10px; }
 .step p { color: var(--ash); margin-top: 8px; font-size: 15px; }
 pre { font: 400 12.5px/1.6 var(--mono); background: var(--obsidian); color: #e8e7e6; border-radius: 12px; padding: 18px; overflow: auto; margin-top: 16px; }
 
@@ -211,9 +211,9 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space
     <div class="label">How it works</div>
     <h2>Two passes on one GPU. Counting in code, wording by the model.</h2>
     <div class="steps">
-      <div class="card step"><div class="k">01 · read</div><h4>Every review, one JSON</h4><p>Gemma 3 12B returns fit direction, other causes from a fixed list, the exact quote, and a one-line fix. Batched generation in bf16 on ROCm PyTorch.</p></div>
-      <div class="card step"><div class="k">02 · count</div><h4>Shares come from code</h4><p>The product's "runs small" share and cause mix are plain counts over the per-review answers, so the model cannot inflate a problem.</p></div>
-      <div class="card step"><div class="k">03 · write</div><h4>The fix a seller pastes</h4><p>A second Gemma pass sees only those counts and real quotes, and writes the size note, the description line, and the photo to add.</p></div>
+      <div class="card step"><div class="k">01 · read</div><h3>Every review, one JSON</h3><p>Gemma 3 12B returns fit direction, other causes from a fixed list, the exact quote, and a one-line fix. Batched generation in bf16 on ROCm PyTorch.</p></div>
+      <div class="card step"><div class="k">02 · count</div><h3>Shares come from code</h3><p>The product's "runs small" share and cause mix are plain counts over the per-review answers, so the model cannot inflate a problem.</p></div>
+      <div class="card step"><div class="k">03 · write</div><h3>The fix a seller pastes</h3><p>A second Gemma pass sees only those counts and real quotes, and writes the size note, the description line, and the photo to add.</p></div>
     </div>
     <pre>git clone https://github.com/bisale24-ops/why-they-return && cd why-they-return
 pip install "transformers>=4.50" accelerate

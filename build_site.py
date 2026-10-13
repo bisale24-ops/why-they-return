@@ -1,4 +1,4 @@
-"""Bundle the AMD run files into site/data.js for the static demo page. Every number on the page comes from here.
+"""Bundle the AMD run files into docs/data.js for the static demo page. Every number on the page comes from here.
 
     python3 build_site.py
 """
@@ -73,8 +73,8 @@ data = {
             "reviews": n_reviews, "seconds": seconds, "reviews_per_s": n_reviews / seconds},
     "products": items,
 }
-(HERE / "site").mkdir(exist_ok=True)
-(HERE / "site" / "data.js").write_text("window.WTR = " + json.dumps(data, indent=1) + ";\n")
+(HERE / "docs").mkdir(exist_ok=True)
+(HERE / "docs" / "data.js").write_text("window.WTR = " + json.dumps(data, indent=1) + ";\n")
 print("reviews macro-F1 gemma %.3f keyword %.3f" % (data["reviews"]["gemma"]["macro_f1"], data["reviews"]["keyword"]["macro_f1"]))
 print("rank small", rank["small"], "large", rank["large"])
 print("throughput %.2f reviews/s on %s" % (data["run"]["reviews_per_s"], data["run"]["gpu"]))

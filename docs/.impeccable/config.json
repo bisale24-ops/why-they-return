@@ -1,0 +1,23 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-10-13T06:04:26.449Z",
+        "reason": "agent: Inter is the substitute font named in the project's Refero Ramp DESIGN.md"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "site/index.html"
+        ],
+        "createdAt": "2026-10-13T06:04:26.476Z",
+        "reason": "agent: uppercase only on short micro-labels/tags, per Ramp DESIGN.md (10–11px uppercase labels)"
+      }
+    ]
+  }
+}
