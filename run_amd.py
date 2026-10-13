@@ -20,7 +20,7 @@ from wtr.prompt import SYSTEM, parse, user_message
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--model", default="unsloth/gemma-3-12b-it")
-ap.add_argument("--set", choices=["dev", "reviews", "products"], required=True)
+ap.add_argument("--set", choices=["dev", "reviews", "products", "products_dev", "products_b"], required=True)
 ap.add_argument("--out", required=True)
 ap.add_argument("--batch", type=int, default=16)
 ap.add_argument("--limit", type=int, default=0)
@@ -30,7 +30,7 @@ here = pathlib.Path(__file__).resolve().parent
 if args.set in ("dev", "reviews"):
     items = [json.loads(line) for line in open(here / "data" / f"{args.set}.jsonl")]
 else:
-    items = [r | {"product": p["item"]} for p in map(json.loads, open(here / "data" / "products.jsonl")) for r in p["reviews"]]
+    items = [r | {"product": p["item"]} for p in map(json.loads, open(here / "data" / f"{args.set}.jsonl")) for r in p["reviews"]]
 if args.limit:
     items = items[: args.limit]
 

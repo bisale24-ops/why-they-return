@@ -19,7 +19,7 @@ for name in ("dev", "reviews"):
     p = HERE / "data" / f"{name}.jsonl"
     if p.exists():
         texts |= {r["id"]: r["text"] for r in map(json.loads, open(p))}
-products = {p["item"]: p for p in map(json.loads, open(HERE / "data" / "products.jsonl"))}
+products = {p["item"]: p for f in sorted((HERE / "data").glob("products*.jsonl")) for p in map(json.loads, open(f))}
 for p in products.values():
     texts |= {r["id"]: r["text"] for r in p["reviews"]}
 
@@ -44,4 +44,6 @@ if run[0].get("product") is not None:
         true = [products[i][f"true_{side}"] for i in items]
         g = [sum(to_label(r["fit"]) == side for r in by[i]) / len(by[i]) for i in items]
         k = [sum(classify(texts[r["id"]]) == side for r in by[i]) / len(by[i]) for i in items]
-        print(f"product runs-{side} share, Spearman vs truth: gemma {spearman(g, true):.3f}  keyword {spearman(k, true):.3f}")
+        print(f"product runs-{side} share, Spearman vs truth: gemma {spearman(g, true):.3f}  keyword {spearman(k, true):.3f}"
+              f"  | mean gemma {sum(g) / len(g):.3f} keyword {sum(k) / len(k):.3f} truth {sum(true) / len(true):.3f}"
+              f"  | MAE gemma {sum(abs(a - b) for a, b in zip(g, true)) / len(g):.3f} keyword {sum(abs(a - b) for a, b in zip(k, true)) / len(k):.3f}")
