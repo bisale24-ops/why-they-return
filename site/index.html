@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why They Return</title>
+<meta name="description" content="Gemma 3 on an AMD GPU reads every review of a product, finds why it comes back, and writes the listing fix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0c0a08; --obsidian: #1a1919; --ash: #6d6c6b; --smoke: #d3d3d3; --hair: #e5e7eb;
+  --bone: #f4f2f0; --paper: #ffffff; --hi: #e4f222;
+  --font: "Inter", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--bone); color: var(--ink); font: 400 16px/1.5 var(--font); font-feature-settings: "ss01", "cv11", "tnum"; }
+a { color: inherit; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ash); }
+.num { font-variant-numeric: tabular-nums; }
+
+nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.86); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hair); }
+nav .wrap { display: flex; align-items: center; gap: 28px; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 16px; text-decoration: none; }
+.brand i { width: 18px; height: 18px; border-radius: 4px; background: var(--ink); position: relative; }
+.brand i::after { content: ""; position: absolute; inset: 5px 5px 5px 9px; background: var(--hi); border-radius: 1px; }
+nav .links { display: flex; gap: 24px; margin-left: auto; font-size: 14px; color: var(--ash); }
+nav .links a { text-decoration: none; transition: color .3s; }
+nav .links a:hover { color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 16px; border-radius: 6px; font: 400 14px var(--font); text-decoration: none; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; transition: background .3s; }
+.btn.hi { background: var(--hi); border-color: var(--hi); }
+.btn:hover { background: var(--paper); }
+.btn.hi:hover { background: #d6e41a; }
+
+header { padding: 88px 0 56px; }
+h1 { font-weight: 400; font-size: clamp(40px, 6vw, 72px); line-height: 1.0; letter-spacing: -.025em; max-width: 15ch; }
+h1 mark { background: linear-gradient(transparent 58%, var(--hi) 58%, var(--hi) 92%, transparent 92%); color: inherit; padding: 0 .04em; }
+.lede { font-size: clamp(18px, 2vw, 22px); line-height: 1.4; color: var(--ash); max-width: 46ch; margin-top: 24px; }
+.hero-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+.strip { background: var(--obsidian); color: var(--paper); }
+.strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+.strip .cell { padding: 22px 24px 22px 0; border-right: 1px solid #2c2b2a; }
+.strip .cell + .cell { padding-left: 24px; }
+.strip .cell:last-child { border-right: 0; }
+.strip .label { color: #8c8b8a; }
+.strip .v { font-size: 28px; line-height: 1.1; margin-top: 6px; letter-spacing: -.01em; }
+.strip .v small { font-size: 14px; color: #8c8b8a; margin-left: 6px; letter-spacing: 0; }
+.strip .v .hi { color: var(--hi); }
+
+section { padding: 88px 0; }
+h2 { font-weight: 400; font-size: clamp(30px, 4vw, 44px); line-height: 1.05; letter-spacing: -.02em; max-width: 22ch; }
+.sub { color: var(--ash); max-width: 60ch; margin-top: 14px; font-size: 17px; }
+
+/* Report */
+.report { display: grid; grid-template-columns: 300px 1fr; gap: 24px; margin-top: 40px; align-items: start; }
+.list { background: var(--paper); border: 1px solid var(--hair); border-radius: 16px; overflow: hidden; position: sticky; top: 80px; }
+.list .head { display: flex; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--hair); }
+.list ol { list-style: none; padding: 0; max-height: 560px; overflow: auto; }
+.list li button { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 12px 16px; cursor: pointer; border-bottom: 1px solid var(--hair); transition: background .3s; }
+.list li button:hover { background: var(--bone); }
+.list li button[aria-current="true"] { background: var(--ink); color: var(--paper); }
+.list li button[aria-current="true"] .label { color: #a3a2a1; }
+.list .nm { font-size: 14px; }
+.list .risk { font-size: 14px; text-align: right; }
+.list .bar { grid-column: 1 / -1; height: 3px; background: var(--hair); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+.list .bar i { display: block; height: 100%; background: var(--ink); }
+.list li button[aria-current="true"] .bar { background: #3a3938; }
+.list li button[aria-current="true"] .bar i { background: var(--hi); }
+
+.card { background: var(--paper); border: 1px solid var(--hair); border-radius: 16px; padding: 28px; }
+.detail { display: grid; gap: 16px; }
+.d-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.d-top h3 { font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -.015em; margin-top: 6px; max-width: 20ch; }
+.sizenote { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; background: var(--hi); font-size: 14px; }
+.sizenote.none { background: var(--bone); color: var(--ash); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.meter { margin-top: 18px; }
+.meter .row { display: grid; grid-template-columns: 112px 1fr 52px; gap: 12px; align-items: center; font-size: 14px; margin-top: 10px; }
+.meter .track { height: 10px; background: var(--bone); border-radius: 3px; position: relative; overflow: hidden; }
+.meter .track i { position: absolute; inset: 0 auto 0 0; background: var(--ink); border-radius: 3px; transition: width .4s ease-out; }
+.meter .track.truth i { background: var(--smoke); }
+.meter .track.kw i { background: transparent; border: 1px dashed var(--ash); }
+.legend { display: flex; gap: 16px; margin-top: 16px; font-size: 12px; color: var(--ash); flex-wrap: wrap; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--ink); }
+.legend .t::before { background: var(--smoke); }
+.legend .k::before { background: transparent; border: 1px dashed var(--ash); }
+
+.causes { margin-top: 14px; display: grid; gap: 8px; }
+.causes .c { display: grid; grid-template-columns: 1fr auto; font-size: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--hair); }
+
+.fix p { font-size: 18px; line-height: 1.45; margin-top: 10px; }
+.fix .photo { margin-top: 14px; font-size: 14px; color: var(--ash); }
+.fix .actions { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+
+.money { background: var(--obsidian); color: var(--paper); border-color: var(--obsidian); }
+.money .label { color: #8c8b8a; }
+.money .inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.money label { display: grid; gap: 6px; font-size: 12px; color: #a3a2a1; }
+.money input { font: 400 16px var(--font); color: var(--paper); background: #252423; border: 1px solid #3a3938; border-radius: 10px; padding: 10px 12px; width: 100%; }
+.money input:focus { outline: 2px solid var(--hi); outline-offset: 1px; }
+.money .big { font-size: clamp(36px, 5vw, 56px); line-height: 1; letter-spacing: -.02em; margin-top: 22px; color: var(--hi); }
+.money .explain { font-size: 13px; color: #a3a2a1; margin-top: 10px; max-width: 60ch; }
+
+.quotes { display: grid; gap: 12px; margin-top: 14px; }
+.q { border: 1px solid var(--hair); border-radius: 12px; padding: 14px 16px; font-size: 14px; color: var(--ash); }
+.q b { font-weight: 400; color: var(--ink); background: linear-gradient(transparent 55%, var(--hi) 55%); }
+.q .tag { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--ink); color: var(--ink); margin-right: 8px; }
+
+/* Proof */
+.proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.stat .v { font-size: 48px; line-height: 1; letter-spacing: -.02em; margin-top: 14px; }
+.stat .vs { font-size: 14px; color: var(--ash); margin-top: 10px; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+th, td { text-align: left; padding: 12px 8px; border-bottom: 1px solid var(--hair); }
+th { font-weight: 400; color: var(--ash); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+tr.win td { background: linear-gradient(90deg, rgba(228,242,34,.35), rgba(228,242,34,0)); }
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.step .k { font-family: var(--mono); font-size: 13px; color: var(--ash); }
+.step h4 { font-weight: 400; font-size: 22px; margin-top: 10px; }
+.step p { color: var(--ash); margin-top: 8px; font-size: 15px; }
+pre { font: 400 12.5px/1.6 var(--mono); background: var(--obsidian); color: #e8e7e6; border-radius: 12px; padding: 18px; overflow: auto; margin-top: 16px; }
+
+footer { border-top: 1px solid var(--hair); padding: 32px 0 56px; color: var(--ash); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+
+@media (max-width: 960px) {
+  .report { grid-template-columns: 1fr; }
+  .list { position: static; }
+  .list ol { max-height: 280px; }
+  .split, .proof, .steps { grid-template-columns: 1fr; }
+  .strip .wrap { grid-template-columns: 1fr 1fr; }
+  .strip .cell { border-right: 0; padding-left: 0 !important; border-bottom: 1px solid #2c2b2a; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 16px; }
+  nav .links a:not(.btn) { display: none; }
+  .money .inputs { grid-template-columns: 1fr; }
+  .card { padding: 20px; }
+  header { padding: 56px 0 40px; }
+  section { padding: 64px 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><i></i>Why They Return</a>
+    <div class="links">
+      <a href="#report">Report</a>
+      <a href="#proof">Proof</a>
+      <a href="#how">How it works</a>
+      <a class="btn" href="https://github.com/bisale24-ops/why-they-return">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="label">Gemma 3 · AMD Radeon PRO · ROCm</div>
+    <h1 style="margin-top:18px">Your reviews already say <mark>why it comes back</mark>.</h1>
+    <p class="lede">An open Google model on an AMD GPU reads every review of a product, finds the fit and quality problems behind returns, and writes the fix for the listing.</p>
+    <div class="hero-row">
+      <a class="btn hi" href="#report">Open a product report</a>
+      <a class="btn" href="#proof">See how we measured it</a>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-label="Run on AMD">
+  <div class="wrap" id="strip"></div>
+</div>
+
+<section id="report">
+  <div class="wrap">
+    <div class="label">Product reports · 40 real dresses</div>
+    <h2>Pick a product. See what its renters were telling you.</h2>
+    <p class="sub">Each report is Gemma reading 60 real reviews of one Rent the Runway item. The grey bar is what renters themselves reported across <em>all</em> reviews of that item, a number Gemma never saw.</p>
+    <div class="report">
+      <aside class="list">
+        <div class="head"><span class="label">By fit-return risk</span><span class="label" id="count"></span></div>
+        <ol id="items"></ol>
+      </aside>
+      <div class="detail" id="detail"></div>
+    </div>
+  </div>
+</section>
+
+<section id="proof" style="background:var(--paper);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)">
+  <div class="wrap">
+    <div class="label">Proof, measured once on held-out data</div>
+    <h2>Checked against what renters said themselves.</h2>
+    <p class="sub">Rent the Runway asks every renter whether the item fit, ran small or ran large. We hid that label, gave Gemma only the review text, and compared. The prompt was tuned on a separate dev set; the numbers below are from a single run on data it never touched.</p>
+    <div class="proof" id="proofstats"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="label">Review-level, balanced sample</div>
+      <table id="cls"></table>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="label">How it works</div>
+    <h2>Two passes on one GPU. Counting in code, wording by the model.</h2>
+    <div class="steps">
+      <div class="card step"><div class="k">01 · read</div><h4>Every review, one JSON</h4><p>Gemma 3 12B returns fit direction, other causes from a fixed list, the exact quote, and a one-line fix. Batched generation in bf16 on ROCm PyTorch.</p></div>
+      <div class="card step"><div class="k">02 · count</div><h4>Shares come from code</h4><p>The product's "runs small" share and cause mix are plain counts over the per-review answers, so the model cannot inflate a problem.</p></div>
+      <div class="card step"><div class="k">03 · write</div><h4>The fix a seller pastes</h4><p>A second Gemma pass sees only those counts and real quotes, and writes the size note, the description line, and the photo to add.</p></div>
+    </div>
+    <pre>git clone https://github.com/bisale24-ops/why-they-return && cd why-they-return
+pip install "transformers>=4.50" accelerate
+python run_amd.py --set products --out out/products_12b.jsonl     # pass 1, AMD GPU
+python summarize_amd.py --runs out/products_12b.jsonl --out out/product_reports.jsonl
+python evaluate.py out/products_12b.jsonl                          # every number on this page</pre>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Why They Return · AMD Developer Hackathon ACT III · MIT</span>
+    <span>Data: Rent the Runway reviews, UCSD McAuley Lab (Misra, Wan, McAuley, RecSys 2018)</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const D = window.WTR;
+const pct = (x, d = 0) => (100 * x).toFixed(d) + "%";
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const CAUSE = { length: "Length", fabric_quality: "Fabric quality", colour_vs_photo: "Colour vs photo", comfort: "Comfort", zipper_or_closure: "Zipper or closure", style_vs_photo: "Looks different from photo", other: "Other" };
+const risk = p => p.pred_small + p.pred_large;
+const title = p => `${p.category[0].toUpperCase() + p.category.slice(1)} #${p.item}`;
+
+const r = D.run, m = D.reviews;
+document.getElementById("strip").innerHTML = `
+  <div class="cell"><div class="label">Reviews read on AMD</div><div class="v num">${r.reviews.toLocaleString("en-US")}<small>${esc(r.gpu)}</small></div></div>
+  <div class="cell"><div class="label">Throughput</div><div class="v num">${r.reviews_per_s.toFixed(2)}<small>reviews / s, one GPU</small></div></div>
+  <div class="cell"><div class="label">Macro-F1 vs keyword rules</div><div class="v num"><span class="hi">${m.gemma.macro_f1.toFixed(2)}</span><small>vs ${m.keyword.macro_f1.toFixed(2)}</small></div></div>
+  <div class="cell"><div class="label">Model</div><div class="v">Gemma 3 12B<small>open weights</small></div></div>`;
+
+const items = [...D.products].sort((a, b) => risk(b) - risk(a));
+document.getElementById("count").textContent = items.length + " items";
+const ol = document.getElementById("items");
+ol.innerHTML = items.map((p, i) => `<li><button data-i="${i}" aria-current="false">
+  <span class="nm">${esc(title(p))}</span><span class="risk num">${pct(risk(p))}</span>
+  <span class="label">${p.n_reviews} reviews</span><span class="label">fit issues</span>
+  <span class="bar"><i style="width:${pct(Math.min(1, risk(p) / 0.7))}"></i></span></button></li>`).join("");
+
+let units = 400, price = 120, cost = 18;
+try { const s = JSON.parse(localStorage.getItem("wtr-money") || "{}"); units = s.units ?? units; price = s.price ?? price; cost = s.cost ?? cost; } catch (e) {}
+
+function meter(name, pred, truth, kw) {
+  return `<div class="row"><span>${name}</span><span class="track"><i style="width:${pct(pred)}"></i></span><span class="num">${pct(pred)}</span></div>
+          <div class="row"><span class="label">renters said</span><span class="track truth"><i style="width:${pct(truth)}"></i></span><span class="num">${pct(truth)}</span></div>
+          <div class="row"><span class="label">keyword rule</span><span class="track kw"><i style="width:${pct(kw)}"></i></span><span class="num">${pct(kw)}</span></div>`;
+}
+
+function highlight(text, quote) {
+  const t = esc(text), q = esc(quote).trim();
+  if (!q) return t;
+  const i = t.toLowerCase().indexOf(q.toLowerCase());
+  return i < 0 ? t : t.slice(0, i) + "<b>" + t.slice(i, i + q.length) + "</b>" + t.slice(i + q.length);
+}
+
+function show(i) {
+  const p = items[i], rep = p.report || {};
+  ol.querySelectorAll("button").forEach(b => b.setAttribute("aria-current", b.dataset.i == i));
+  const causes = Object.entries(p.causes).filter(([c]) => c !== "other").slice(0, 5);
+  const note = rep.size_note ? `<span class="sizenote">${esc(rep.size_note)}</span>` : `<span class="sizenote none">No size note needed</span>`;
+  document.getElementById("detail").innerHTML = `
+    <div class="card">
+      <div class="d-top"><div><div class="label">${esc(title(p))} · ${p.sampled} of ${p.n_reviews} reviews read</div>
+        <h3>${esc(rep.headline || "Fit report")}</h3></div>${note}</div>
+      <div class="meter">${meter("Runs small", p.pred_small, p.true_small, p.kw_small)}</div>
+      <div class="meter">${meter("Runs large", p.pred_large, p.true_large, p.kw_large)}</div>
+      <div class="legend"><span>Gemma on AMD</span><span class="t">Renters' own label, all reviews</span><span class="k">Keyword rule</span></div>
+    </div>
+    <div class="split">
+      <div class="card fix"><div class="label">Add to the listing</div>
+        <p id="fixtext">${esc(rep.listing_fix || "No change needed.")}</p>
+        ${rep.photo_to_add ? `<div class="photo">Photo to add: ${esc(rep.photo_to_add)}</div>` : ""}
+        <div class="actions"><button class="btn" id="copy">Copy text</button></div></div>
+      <div class="card"><div class="label">Other reasons in the reviews</div>
+        <div class="causes">${causes.length ? causes.map(([c, s]) => `<div class="c"><span>${CAUSE[c] || c}</span><span class="num">${pct(s)}</span></div>`).join("") : `<div class="c"><span>None stood out</span><span></span></div>`}</div></div>
+    </div>
+    <div class="card money">
+      <div class="label">What fit returns cost you on this item</div>
+      <div class="inputs">
+        <label>Orders per month<input id="u" type="number" min="0" value="${units}"></label>
+        <label>Price, $<input id="pr" type="number" min="0" value="${price}"></label>
+        <label>Cost of one return, $<input id="c" type="number" min="0" value="${cost}"></label>
+      </div>
+      <div class="big num" id="big"></div>
+      <div class="explain" id="explain"></div>
+    </div>
+    <div class="card"><div class="label">What they wrote, with the phrase Gemma cited</div>
+      <div class="quotes">${p.examples.map(e => `<div class="q"><span class="tag">${e.fit === "small" ? "runs small" : "runs large"}</span>${highlight(e.text, e.quote)}</div>`).join("")}</div></div>`;
+  const calc = () => {
+    units = +document.getElementById("u").value || 0; price = +document.getElementById("pr").value || 0; cost = +document.getElementById("c").value || 0;
+    try { localStorage.setItem("wtr-money", JSON.stringify({ units, price, cost })); } catch (e) {}
+    const share = risk(p), lost = units * share * cost * 12;
+    document.getElementById("big").textContent = "$" + Math.round(lost).toLocaleString("en-US") + " / year";
+    document.getElementById("explain").textContent = `${pct(share)} of reviews report a size problem. If that share of ${units} monthly orders comes back, at $${cost} handling each, that is ${Math.round(units * share)} returns a month (assuming each size complaint is a return), plus $${Math.round(units * share * price).toLocaleString("en-US")} of sales a month at risk until the listing says how it fits.`;
+  };
+  ["u", "pr", "c"].forEach(id => document.getElementById(id).addEventListener("input", calc));
+  calc();
+  document.getElementById("copy").addEventListener("click", e => {
+    const t = [rep.size_note, rep.listing_fix].filter(Boolean).join("\n");
+    navigator.clipboard?.writeText(t).then(() => { e.target.textContent = "Copied"; setTimeout(() => e.target.textContent = "Copy text", 1400); });
+  });
+}
+ol.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
+show(0);
+
+const rk = D.products_rank;
+document.getElementById("proofstats").innerHTML = `
+  <div class="card stat"><div class="label">Review-level macro-F1</div><div class="v num">${m.gemma.macro_f1.toFixed(3)}</div><div class="vs">keyword rules ${m.keyword.macro_f1.toFixed(3)} · ${m.n} held-out reviews</div></div>
+  <div class="card stat"><div class="label">Ranks products that run small</div><div class="v num">${rk.small.gemma.toFixed(2)}</div><div class="vs">Spearman vs renters' own share · keyword ${rk.small.keyword.toFixed(2)}</div></div>
+  <div class="card stat"><div class="label">Ranks products that run large</div><div class="v num">${rk.large.gemma.toFixed(2)}</div><div class="vs">Spearman vs renters' own share · keyword ${rk.large.keyword.toFixed(2)}</div></div>`;
+const row = (name, s, win) => `<tr class="${win ? "win" : ""}"><td>${name}</td><td class="n">${s.macro_f1.toFixed(3)}</td><td class="n">${s.accuracy.toFixed(3)}</td>${["fit", "small", "large"].map(c => `<td class="n">${s[c].precision.toFixed(2)} / ${s[c].recall.toFixed(2)}</td>`).join("")}</tr>`;
+document.getElementById("cls").innerHTML = `<tr><th>Method</th><th class="n">Macro-F1</th><th class="n">Accuracy</th><th class="n">Fit P / R</th><th class="n">Small P / R</th><th class="n">Large P / R</th></tr>
+  ${row("Gemma 3 12B on AMD", m.gemma, true)}${row("Keyword rules", m.keyword, false)}`;
+</script>
+</body>
+</html>
